@@ -46,6 +46,9 @@ set laststatus=2    " always show status line
 set noruler         " turn off ruller
 set statusline=%<%f%m\ %r%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
 
+hi StatusLine cterm=reverse ctermfg=237 ctermbg=231
+hi Normal cterm=reverse ctermfg=231 ctermbg=234
+
 set incsearch       " incremental search
 set scrolloff=8     " always show 8 lines when scrolling
  
