@@ -74,6 +74,7 @@ augroup END
 
 " Automatically open, but do not go to (if there are errors)
 " the quickfix / location list window, or close it when is has become empty.
+" TODO: Make the quicfix window active.
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
