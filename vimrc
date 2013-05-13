@@ -67,6 +67,8 @@ augroup END
 
 augroup ProjectSetup
   au BufRead,BufEnter /home/simon/work/mclinker/git/* set makeprg=mc-bld.sh
+  au BufRead,BufEnter /home/simon/work/llvm/git/*     set makeprg=clang-bld.sh
+  au BufRead,BufEnter /home/simon/work/lld/git/*      set makeprg=lld-bld.sh
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
