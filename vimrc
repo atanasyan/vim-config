@@ -7,6 +7,7 @@ execute pathogen#infect()
 " Enable 256-colors support
 set t_Co=256
 set background=dark
+
 " Set color scheme.
 colorscheme desert256
 
@@ -120,3 +121,15 @@ let g:tagbar_compact =  1 " Do not show help
 let g:NERDChristmasTree     = 1 " Turn on colors
 let g:NERDTreeMinimalUI     = 1 " Remove help and bookmarks
 let g:NERDTreeShowBookmarks = 1 " Restore bookmarks
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" clang_complete https://github.com/Rip-Rip/clang_complete
+
+set completeopt = "menuone"
+set pumheight=10
+let g:clang_library_path  = "/home/simon/work/llvm/stable/lib"
+let g:clang_complete_auto = 0
+let g:clang_close_preview = 1
+
+highlight Pmenu ctermfg=red ctermbg=white
+"highlight PmenuSel ctermfg=white ctermbg=blue
