@@ -53,6 +53,9 @@ set scrolloff=8     " always show 8 lines when scrolling
  
 set tags=./tags;/   " Set tags search rule
 
+" expand %% to the folder contains the current file
+cabbr <expr> %% expand('%:p:h') 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 
