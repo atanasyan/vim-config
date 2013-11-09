@@ -43,10 +43,6 @@ set timeoutlen=2000 " command key timeout
 
 set laststatus=2    " always show status line
 set noruler         " turn off ruller
-set statusline=%<%f%m\ %r%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
-
-hi StatusLine cterm=reverse ctermfg=237 ctermbg=231
-hi Normal cterm=reverse ctermfg=231 ctermbg=234
 
 set incsearch       " incremental search
 set scrolloff=8     " always show 8 lines when scrolling
@@ -55,6 +51,14 @@ set tags=./tags;/   " Set tags search rule
 
 " expand %% to the folder contains the current file
 cabbr <expr> %% expand('%:p:h') 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line configuration
+
+set statusline=%<%f%m\ %r%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
+
+hi StatusLine cterm=reverse ctermfg=237 ctermbg=231
+hi Normal cterm=reverse ctermfg=231 ctermbg=234
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
@@ -124,6 +128,7 @@ let g:tagbar_compact =  1 " Do not show help
 let g:NERDChristmasTree     = 1 " Turn on colors
 let g:NERDTreeMinimalUI     = 1 " Remove help and bookmarks
 let g:NERDTreeShowBookmarks = 1 " Restore bookmarks
+let g:NERDTreeWinSize       = 40 " Window width
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang_complete https://github.com/Rip-Rip/clang_complete
@@ -136,3 +141,9 @@ let g:clang_close_preview = 1
 
 highlight Pmenu ctermfg=red ctermbg=white
 "highlight PmenuSel ctermfg=white ctermbg=blue
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" clang-format
+
+map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
+imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
