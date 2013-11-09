@@ -55,7 +55,7 @@ cabbr <expr> %% expand('%:p:h')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line configuration
 
-set statusline=%<%f%m\ %r%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
+set statusline=%<%f%m\ %r[%{fugitive#head()}]%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
 
 hi StatusLine cterm=reverse ctermfg=237 ctermbg=231
 hi Normal cterm=reverse ctermfg=231 ctermbg=234
