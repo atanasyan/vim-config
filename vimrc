@@ -8,9 +8,6 @@ execute pathogen#infect()
 set t_Co=256
 set background=dark
 
-" Set color scheme.
-colorscheme desert256
-
 " Turn on syntax hilighting
 syntax on
 
@@ -19,6 +16,9 @@ filetype on
 
 " Load indentation rules and plugins according to the detected filetype.
 filetype plugin indent on
+
+" Set color scheme.
+colorscheme hybrid-my
 
 " Jump to the last position when reopen a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -46,6 +46,11 @@ set noruler         " turn off ruller
 
 set incsearch       " incremental search
 set scrolloff=8     " always show 8 lines when scrolling
+
+set colorcolumn=80  " show 80-column
+
+set exrc            " read vim settings from current folder
+set secure          " read 'exrc' in a secure way
  
 set tags=./tags;/   " Set tags search rule
 
@@ -57,9 +62,6 @@ cabbr <expr> %% expand('%:p:h')
 
 set statusline=%<%f%m\ %r[%{fugitive#head()}]%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
 
-hi StatusLine cterm=reverse ctermfg=237 ctermbg=231
-hi Normal cterm=reverse ctermfg=231 ctermbg=234
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 
@@ -68,15 +70,6 @@ augroup filetype
   au! BufRead,BufNewFile *.td                   set filetype=tablegen
   au! BufRead,BufNewFile *.rst                  set filetype=rest
   au! BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
-augroup END
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Configure project specific settings
-
-augroup ProjectSetup
-  au BufRead,BufEnter /home/simon/work/mclinker/git/* set makeprg=mc-bld.sh
-  au BufRead,BufEnter /home/simon/work/llvm/git/*     set makeprg=clang-bld.sh
-  au BufRead,BufEnter /home/simon/work/lld/git/*      set makeprg=lld-bld.sh
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,9 +131,6 @@ set pumheight=10
 let g:clang_library_path  = "/home/simon/work/llvm/stable/lib"
 let g:clang_complete_auto = 0
 let g:clang_close_preview = 1
-
-highlight Pmenu ctermfg=red ctermbg=white
-"highlight PmenuSel ctermfg=white ctermbg=blue
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
