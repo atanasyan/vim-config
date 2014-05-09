@@ -56,6 +56,13 @@ set secure          " read 'exrc' in a secure way
 cabbr <expr> %% expand('%:p:h') 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Persistent undo
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000  " maximum number of changes that can be undone
+set undoreload=10000 " maximum number lines to save for undo on a buffer reload
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line configuration
 
 set statusline=%<%f%m\ %r[%{fugitive#head()}]%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
@@ -97,9 +104,6 @@ map <F2> :call RegFileAction("w")<CR>
 map <F5> :call RegFileAction("bp")<CR>
 map <F6> :call RegFileAction("bn")<CR>
 
-" Map F8 to open/close Tagbar
-map <F8> :call RegFileAction("TagbarToggle")<CR>
-
 " Map F9 to open/close NERDTree
 map <F9> :call RegFileAction("NERDTreeToggle")<CR>
 
@@ -118,18 +122,22 @@ let g:NERDTreeWinSize       = 40 " Window width
 " YouCompleteMe
 " https://github.com/Valloric/YouCompleteMe
 
-"hi SpellBad ctermfg=220 ctermbg=233
-"highlight link SyntasticError SpellBad
-"hi SpellCap ctermfg=www ctermbg=xxx
-set numberwidth=6
-"let g:ycm_error_symbol = '!'
+highlight YcmErrorSection ctermbg=124
+highlight YcmWarningSection ctermbg=118
+
+let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_server_log_level = 'warning'
-"let g:ycm_enable_diagnostic_signs = 1
+
 map <C-]> :YcmCompleter GoTo<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter
+" https://github.com/airblade/vim-gitgutter
+
+let g:gitgutter_sign_column_always = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
 
 map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
-imap <C-I> <ESC>:pyf ~/.vim/bin/clang-format.py<CR>i
