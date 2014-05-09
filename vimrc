@@ -38,7 +38,7 @@ set tabstop=2       " numbers of spaces of tab character
 set shiftwidth=2    " numbers of spaces to (auto)indent
 set expandtab       " replace tab by spaces
 
-set nu              " show line numbers
+set number          " show line numbers
 set timeoutlen=2000 " command key timeout
 
 set laststatus=2    " always show status line
@@ -51,8 +51,6 @@ set colorcolumn=80  " show 80-column
 
 set exrc            " read vim settings from current folder
 set secure          " read 'exrc' in a secure way
- 
-set tags=./tags;/   " Set tags search rule
 
 " expand %% to the folder contains the current file
 cabbr <expr> %% expand('%:p:h') 
@@ -109,13 +107,6 @@ map <F9> :call RegFileAction("NERDTreeToggle")<CR>
 map <c-w>w :bw<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar
-
-let g:tagbar_left    =  1 " Show window on left
-let g:tagbar_width   = 30 " Set window's width
-let g:tagbar_compact =  1 " Do not show help
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 
 let g:NERDChristmasTree     = 1 " Turn on colors
@@ -124,13 +115,18 @@ let g:NERDTreeShowBookmarks = 1 " Restore bookmarks
 let g:NERDTreeWinSize       = 40 " Window width
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" clang_complete https://github.com/Rip-Rip/clang_complete
+" YouCompleteMe
+" https://github.com/Valloric/YouCompleteMe
 
-set completeopt = "menuone"
-set pumheight=10
-let g:clang_library_path  = "/home/simon/work/llvm/stable/lib"
-let g:clang_complete_auto = 0
-let g:clang_close_preview = 1
+"hi SpellBad ctermfg=220 ctermbg=233
+"highlight link SyntasticError SpellBad
+"hi SpellCap ctermfg=www ctermbg=xxx
+set numberwidth=6
+"let g:ycm_error_symbol = '!'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_server_log_level = 'warning'
+"let g:ycm_enable_diagnostic_signs = 1
+map <C-]> :YcmCompleter GoTo<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
