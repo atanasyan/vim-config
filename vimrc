@@ -125,6 +125,7 @@ let g:NERDTreeWinSize       = 40 " Window width
 highlight YcmErrorSection ctermbg=124
 highlight YcmWarningSection ctermbg=118
 
+let g:ycm_auto_trigger = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_server_log_level = 'warning'
