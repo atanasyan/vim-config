@@ -119,26 +119,6 @@ let g:NERDTreeShowBookmarks = 1 " Restore bookmarks
 let g:NERDTreeWinSize       = 40 " Window width
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe
-" https://github.com/Valloric/YouCompleteMe
-
-highlight YcmErrorSection ctermbg=124
-highlight YcmWarningSection ctermbg=118
-
-let g:ycm_auto_trigger = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_log_level = 'warning'
-
-map <C-]> :YcmCompleter GoTo<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GitGutter
-" https://github.com/airblade/vim-gitgutter
-
-let g:gitgutter_sign_column_always = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
 
 map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
