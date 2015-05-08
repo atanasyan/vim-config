@@ -121,4 +121,5 @@ let g:NERDTreeWinSize       = 40 " Window width
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
 
+let clang_format_fallback_style="LLVM"
 map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
