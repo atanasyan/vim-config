@@ -65,7 +65,7 @@ set undoreload=10000 " maximum number lines to save for undo on a buffer reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line configuration
 
-set statusline=%<%f%m\ %r[%{fugitive#head()}]%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
+set statusline=%02n\ %<%f%m\ %r[%{fugitive#head()}]%=Line:\ %l/%L[%p%%]\ Col:\ %3c\ [%3b]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
@@ -109,6 +109,13 @@ map <F9> :call RegFileAction("NERDTreeToggle")<CR>
 
 " Map Ctrl-w w to :bwipeout
 map <c-w>w :bw<CR>
+
+" Map Ctrl-p Ctrl-f to open CtrlP in file find mode
+" Map Ctrl-p Ctrl-b to open CtrlP in buffer find mode
+" Map Ctrl-p Ctrl-m to open CtrlP in MRU find mode
+map <c-p><c-f> :CtrlP<CR>
+map <c-p><c-u> :CtrlPBuffer<CR>
+map <c-p><c-m> :CtrlPMRU<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
