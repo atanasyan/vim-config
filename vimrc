@@ -24,6 +24,13 @@ colorscheme hybrid-my
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn off cursor keys.
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc settings.
 
 set showcmd         " show (partial) command in status line.
@@ -95,14 +102,6 @@ function RegFileAction(action)
     execute a:action
   endif
 endfunction
-
-" Map F2 to save buffer
-map <F2> :call RegFileAction("w")<CR>
-
-" Map F5/F6 to switch to previous/next buffer
-" TODO: Switch to the next regular buffer
-map <F5> :call RegFileAction("bp")<CR>
-map <F6> :call RegFileAction("bn")<CR>
 
 " Map F9 to open/close NERDTree
 map <F9> :call RegFileAction("NERDTreeToggle")<CR>
