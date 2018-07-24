@@ -92,6 +92,7 @@ augroup END
 " TODO: Make the quicfix window active.
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -128,4 +129,4 @@ let g:NERDTreeWinSize       = 40 " Window width
 " clang-format
 
 let clang_format_fallback_style="LLVM"
-map <C-I> :pyf ~/.vim/bin/clang-format.py<CR>
+map <C-I> :py3f ~/.vim/bin/clang-format.py<CR>
