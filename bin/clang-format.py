@@ -1,1 +1,1 @@
-/home/simon/work/llvm/git/tools/clang/tools/clang-format/clang-format.py
+/home/simon/work/llvm/git/clang/tools/clang-format/clang-format.py
